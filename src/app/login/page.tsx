@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const router = useRouter(); // Use Next.js router
+  const router = useRouter();
 
 interface FormEvent {
     preventDefault: () => void;
@@ -18,25 +18,23 @@ const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (!email || !password) {
-        setError("Both fields are required");
+      toast.error("Submit all fields.");
         return;
     }
 
     // Simulating a login process
     if (email && password) {
-        // Clear error and redirect to home page
-        setError("");
         router.push("/"); // Navigate to the home page
     } else {
-        setError("Invalid email or password");
+      toast.error("An error occurred. Please try again later.");
     }
 };
 
   return (
     <div className="bg-background text-foreground min-h-screen flex items-center justify-center p-6">
+      <ToastContainer />
       <div className="max-w-md w-full bg-card p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-primary mb-6 text-center">Login</h2>
-        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-primary">
