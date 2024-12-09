@@ -40,6 +40,7 @@ export default function Signup() {
         toast.error(result.error || 'Failed to create account. Please try again.');
       }
     } catch (err) {
+      console.log(err);
       toast.error('Something went wrong. Please try again.');
     }
   };
