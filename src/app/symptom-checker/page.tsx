@@ -1,11 +1,14 @@
-'use client'
+"use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function SymptomChecker() {
   const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
   const [response, setResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const symptomsList = [
     "Fever",
@@ -28,11 +31,10 @@ export default function SymptomChecker() {
   };
   interface FormEvent {
     preventDefault: () => void;
-}
+  }
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
     if (selectedSymptoms.length === 0) {
       alert("Please select at least one symptom.");
       return;
@@ -59,7 +61,8 @@ export default function SymptomChecker() {
           Symptom Checker
         </h1>
         <p className="text-card-foreground mb-8 text-center">
-          Select your symptoms below, and our AI-powered system will provide an initial assessment.
+          Select your symptoms below, and our AI-powered system will provide an
+          initial assessment.
         </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -99,6 +102,17 @@ export default function SymptomChecker() {
           <div className="mt-8 p-4 bg-green-100 text-green-800 rounded-lg">
             <p className="font-semibold">AI Response:</p>
             <p>{response}</p>
+            <div className="mt-4">
+              <p className="text-sm text-gray-700">
+                Consult a doctor for an accurate diagnosis.
+              </p>
+              <button
+                onClick={() => router.push("/doctors")}
+                className="mt-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-opacity-80"
+              >
+                View Doctors List
+              </button>
+            </div>
           </div>
         )}
       </div>

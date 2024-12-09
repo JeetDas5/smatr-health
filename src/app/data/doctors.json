@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Anil Kumar",
+    "specialization": "Cardiologist",
+    "consultationFee": "₹1500",
+    "clinicName": "Heart Care Clinic"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Priya Sharma",
+    "specialization": "Dermatologist",
+    "consultationFee": "₹1200",
+    "clinicName": "Skin Wellness Center"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Rajesh Gupta",
+    "specialization": "Orthopedic",
+    "consultationFee": "₹1800",
+    "clinicName": "OrthoPlus Hospital"
+  },
+  {
+    "id": 4,
+    "name": "Dr. Kavita Nair",
+    "specialization": "Pediatrician",
+    "consultationFee": "₹1300",
+    "clinicName": "Children's Care Clinic"
+  },
+  {
+    "id": 5,
+    "name": "Dr. Rohit Mehta",
+    "specialization": "Cardiologist",
+    "consultationFee": "₹1700",
+    "clinicName": "Pulse Health Center"
+  },
+  {
+    "id": 6,
+    "name": "Dr. Sanjana Iyer",
+    "specialization": "Gastroenterologist",
+    "consultationFee": "₹2000",
+    "clinicName": "Digestive Health Clinic"
+  },
+  {
+    "id": 7,
+    "name": "Dr. Vikram Reddy",
+    "specialization": "Neurologist",
+    "consultationFee": "₹2200",
+    "clinicName": "Brain and Spine Institute"
+  },
+  {
+    "id": 8,
+    "name": "Dr. Neha Agarwal",
+    "specialization": "Gynecologist",
+    "consultationFee": "₹1500",
+    "clinicName": "Women's Health Clinic"
+  },
+  {
+    "id": 9,
+    "name": "Dr. Arjun Singh",
+    "specialization": "Oncologist",
+    "consultationFee": "₹2500",
+    "clinicName": "Cancer Care Hospital"
+  },
+  {
+    "id": 10,
+    "name": "Dr. Meera Deshmukh",
+    "specialization": "Endocrinologist",
+    "consultationFee": "₹1800",
+    "clinicName": "Diabetes and Hormone Clinic"
+  }
+]
