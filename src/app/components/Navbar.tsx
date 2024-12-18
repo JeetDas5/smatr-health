@@ -1,5 +1,7 @@
-// Navbar.js
+/* eslint-disable */
+
 "use client";
+
 
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
@@ -19,29 +21,26 @@ const Navbar = () => {
           SmartHealth Navigator
         </Link>
         <div className="space-x-4 gap-2 md:gap-0">
-        {user ? (
-          <div className="flex flex-row">
-          <p className="text-white m-2 text-xl ">
-            Welcome {user.name}
-          </p>
-          <Link
-            href="/api/auth/logout"
-            className="text-green-800 text-lg bg-white px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground"
-          >
-            Logout
-          </Link>
-          </div>
-        ) : (
-          <Link
-            href="/api/auth/login"
-            className="text-green-800 text-lg bg-white px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground"
-          >
-            Login
-          </Link>
-        )}
-
-          
-          
+          {user ? (
+            <div className="flex flex-row">
+              <p className="text-white m-2 text-xl ">
+                Welcome {user.email_verified ? user.name : user.nickname}
+              </p>
+              <a
+                href="/api/auth/logout"
+                className="text-green-800 text-lg bg-white px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground"
+              >
+                Logout
+              </a>
+            </div>
+          ) : (
+            <a
+              href="/api/auth/login"
+              className="text-green-800 text-lg bg-white px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground"
+            >
+              Login
+            </a>
+          )}
         </div>
       </div>
     </nav>
