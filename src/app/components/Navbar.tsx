@@ -11,8 +11,9 @@ const Navbar = () => {
 
   console.log("Current user: ", user);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  if(error){
+    console.log("Error: ", error);
+  }
 
   return (
     <nav className="bg-card text-card-foreground py-4 shadow-md">
@@ -21,7 +22,7 @@ const Navbar = () => {
           SmartHealth Navigator
         </Link>
         <div className="space-x-4 gap-2 md:gap-0">
-          {user ? (
+          {!isLoading && user ? (
             <div className="flex flex-row">
               <p className="text-white m-2 text-xl ">
                 Welcome {user.email_verified ? user.name : user.nickname}
